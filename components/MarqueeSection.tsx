@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import FadeIn from "./FadeIn";
 
@@ -94,9 +94,9 @@ const ROW_2 = ["TiDB Cloud", "SQL Server", "MySQL", "SQLite", "Tailwind CSS", "S
 
 function TechBadge({ name }: { name: string }) {
   return (
-    <div className="flex items-center gap-2.5 px-5 py-3 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm shrink-0 mx-3 select-none">
-      <span className="text-white/50">{icons[name]}</span>
-      <span className="text-sm font-medium uppercase tracking-wide text-white/60 whitespace-nowrap">
+    <div className="flex items-center gap-3 px-5 py-3 rounded-2xl border border-white/[0.08] bg-[#0c1220]/70 backdrop-blur-md shrink-0 mx-2.5 select-none transition-all duration-300 hover:border-teal-500/40 hover:bg-[#111a2e]/90 hover:shadow-[0_0_20px_rgba(45,212,191,0.15)] group cursor-default">
+      <span className="text-slate-400 group-hover:text-teal-300 transition-colors duration-200">{icons[name]}</span>
+      <span className="text-xs font-semibold uppercase tracking-wider text-slate-300 group-hover:text-white transition-colors duration-200 whitespace-nowrap">
         {name}
       </span>
     </div>
@@ -112,18 +112,26 @@ function MarqueeRow({
   direction: "left" | "right";
   scrollYProgress: MotionValue<number>;
 }) {
-  // scroll-driven: as section scrolls through viewport, translate X ±30%
+  const [isPaused, setIsPaused] = useState(false);
+
   const x = useTransform(
     scrollYProgress,
     [0, 1],
     direction === "right" ? ["0%", "-25%"] : ["-25%", "0%"]
   );
-  // triple items for seamless visual
   const tripled = [...items, ...items, ...items];
 
   return (
-    <div className="overflow-hidden marquee-clip">
-      <motion.div style={{ x }} className="flex w-max">
+    <div
+      className="overflow-hidden marquee-clip py-1"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <motion.div
+        style={{ x }}
+        className="flex w-max"
+        animate={isPaused ? { transition: { duration: 0.5 } } : {}}
+      >
         {tripled.map((name, i) => (
           <TechBadge key={`${name}-${i}`} name={name} />
         ))}
@@ -140,16 +148,20 @@ export default function MarqueeSection() {
   });
 
   return (
-    <section ref={ref} className="py-20 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 mb-10">
+    <section ref={ref} className="py-20 overflow-hidden relative border-y border-white/[0.04] bg-[#070a12]/50">
+      <div className="max-w-6xl mx-auto px-6 mb-8 flex items-center justify-between">
         <FadeIn>
-          <p className="text-xs uppercase tracking-widest text-white/30 font-medium">
-            Tech Stack // Technologies I Work With
+          <p className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-teal-400" />
+            <span>Tech Stack // Technologies I Work With</span>
           </p>
         </FadeIn>
+        <span className="hidden sm:inline text-[11px] font-mono text-slate-500">
+          Scroll-driven interactive strip
+        </span>
       </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3">
         <MarqueeRow items={ROW_1} direction="right" scrollYProgress={scrollYProgress} />
         <MarqueeRow items={ROW_2} direction="left" scrollYProgress={scrollYProgress} />
       </div>

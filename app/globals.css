@@ -3,8 +3,8 @@
 
 @theme {
   --font-sans: var(--font-kanit), "Kanit", system-ui, -apple-system, sans-serif;
-  --color-background: #0c0c0c;
-  --color-foreground: #f0f0f0;
+  --color-background: #090d16;
+  --color-foreground: #f1f5f9;
 }
 
 /* ───────────── Base Reset ───────────── */
@@ -19,62 +19,107 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
-  background: #0c0c0c;
+  background: #090d16;
 }
 
 body {
-  background: #0c0c0c;
-  color: #f0f0f0;
+  background: #090d16;
+  color: #f1f5f9;
   font-family: var(--font-kanit), "Kanit", sans-serif;
   font-weight: 300;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 /* ───────────── Hero heading gradient ───────────── */
 .hero-heading {
-  background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 50%, #a78bfa 100%);
+  background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 55%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+.hero-heading-subtle {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ───────────── True Glassmorphism Surface ───────────── */
+.glass-panel {
+  background: rgba(13, 19, 33, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-interactive {
+  background: rgba(13, 19, 33, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(17, 24, 42, 0.85);
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(45, 212, 191, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ───────────── Tabular Numbers ───────────── */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 /* ───────────── Scrollbar ───────────── */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0c0c;
+  background: #090d16;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(45, 212, 191, 0.25);
+  background: rgba(45, 212, 191, 0.2);
   border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(45, 212, 191, 0.5);
+  background: rgba(45, 212, 191, 0.45);
 }
 
 /* ───────────── Selection ───────────── */
 ::selection {
-  background: rgba(45, 212, 191, 0.25);
-  color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.3);
+  color: #5eead4;
 }
 
-/* ───────────── Noise overlay ───────────── */
+/* ───────────── Ambient Noise & Mesh Overlay ───────────── */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.4;
 }
 
 /* ───────────── Marquee clip ───────────── */
 .marquee-clip {
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+/* ───────────── Accessibility Focus Ring ───────────── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2dd4bf;
+  outline-offset: 2px;
 }
