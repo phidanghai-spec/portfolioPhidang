@@ -41,6 +41,17 @@ export const metadata: Metadata = {
     description: "Sinh viên năm 4 HUFLIT. 50+ RESTful APIs, 12 GoF Design Patterns.",
     images: ["/og-image.png"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
@@ -49,7 +60,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="vi" className="scroll-smooth">
-      <body className={`${kanit.variable} antialiased bg-[#0c0c0c] text-[#f0f0f0]`}>
+      <body className={`${kanit.variable} antialiased bg-[#090d16] text-[#f1f5f9]`}>
+        <a
+          href="#hero"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-teal-950 focus:text-teal-300 focus:border focus:border-teal-500 focus:rounded-xl focus:shadow-[0_0_20px_rgba(45,212,191,0.4)]"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

@@ -169,8 +169,8 @@ export default function ContactSection() {
           ))}
         </div>
 
-        {/* Footer */}
-        <motion.div
+        {/* Semantic Footer */}
+        <motion.footer
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -180,7 +180,7 @@ export default function ContactSection() {
           <span>ENGINEERED WITH NEXT.JS &bull; TAILWIND CSS V4 &bull; FRAMER MOTION</span>
           <span className="hidden sm:inline">&bull;</span>
           <span>ĐẶNG HẢI PHI &copy; 2026</span>
-        </motion.div>
+        </motion.footer>
       </div>
     </section>
   );
