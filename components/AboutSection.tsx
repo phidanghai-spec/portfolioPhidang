@@ -47,7 +47,7 @@ export default function AboutSection() {
                 {[
                   { icon: GraduationCap, label: "University", value: "HUFLIT", color: "text-teal-400" },
                   { icon: Award, label: "GPA", value: "3.0 / 4.0", color: "text-cyan-400" },
-                  { icon: Calendar, label: "Cohort", value: "Class 2026", color: "text-sky-400" },
+                  { icon: Calendar, label: "Cohort", value: "Class 2027", color: "text-sky-400" },
                   { icon: MapPin, label: "Location", value: "TP. Hồ Chí Minh", color: "text-emerald-400" },
                 ].map(({ icon: Icon, label, value, color }) => (
                   <div
