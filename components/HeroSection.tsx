@@ -144,7 +144,7 @@ export default function HeroSection() {
 
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[#070a12]">
                   <Image
-                    src="/hero-visual.jpg"
+                    src="/images/hero-visual.svg"
                     alt="Abstract 3D geometric visual — Đặng Hải Phi portfolio"
                     fill
                     priority

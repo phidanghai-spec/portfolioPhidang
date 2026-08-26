@@ -75,7 +75,7 @@ export default function AboutSection() {
                 <div className="aspect-square rounded-2xl overflow-hidden glass-panel p-2 group cursor-default">
                   <div className="w-full h-full rounded-xl overflow-hidden relative bg-[#070a12]">
                     <Image
-                      src="/about-tl.jpg"
+                      src="/images/about-geo-1.svg"
                       alt="Wireframe cube — abstract geometric"
                       width={400}
                       height={400}
@@ -90,7 +90,7 @@ export default function AboutSection() {
                 <div className="aspect-square rounded-2xl overflow-hidden glass-panel p-2 mt-8 group cursor-default">
                   <div className="w-full h-full rounded-xl overflow-hidden relative bg-[#070a12]">
                     <Image
-                      src="/about-tr.jpg"
+                      src="/images/about-geo-2.svg"
                       alt="Wireframe sphere — abstract geometric"
                       width={400}
                       height={400}
@@ -105,7 +105,7 @@ export default function AboutSection() {
                 <div className="aspect-square rounded-2xl overflow-hidden glass-panel p-2 -mt-8 group cursor-default">
                   <div className="w-full h-full rounded-xl overflow-hidden relative bg-[#070a12]">
                     <Image
-                      src="/about-bl.jpg"
+                      src="/images/about-geo-3.svg"
                       alt="Octahedron constellation — abstract geometric"
                       width={400}
                       height={400}
@@ -120,7 +120,7 @@ export default function AboutSection() {
                 <div className="aspect-square rounded-2xl overflow-hidden glass-panel p-2 group cursor-default">
                   <div className="w-full h-full rounded-xl overflow-hidden relative bg-[#070a12]">
                     <Image
-                      src="/about-br.jpg"
+                      src="/images/about-geo-4.svg"
                       alt="Geometric cluster — abstract 3D"
                       width={400}
                       height={400}
