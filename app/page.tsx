@@ -8,7 +8,7 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#090d16] text-[#f1f5f9] relative overflow-x-hidden">
+    <main className="min-h-screen bg-[#07090e] text-[#cbd5e1] relative overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <MarqueeSection />

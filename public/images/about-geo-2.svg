@@ -1,7 +1,7 @@
 <svg width="680" height="500" viewBox="0 0 680 500" xmlns="http://www.w3.org/2000/svg">
 <rect x="0" y="0" width="680" height="500" fill="#0f1420"/>
-<polygon points="340,120 460,190 460,320 340,390 220,320 220,190" fill="none" stroke="#a78bfa" stroke-opacity="0.6" stroke-width="0.5"/>
-<polygon points="340,120 460,190 340,255 220,190" fill="#5eead4" fill-opacity="0.16"/>
-<polygon points="460,190 460,320 340,390 340,255" fill="#a78bfa" fill-opacity="0.2"/>
+<polygon points="340,120 460,190 460,320 340,390 220,320 220,190" fill="none" stroke="#a9b2bc" stroke-opacity="0.6" stroke-width="0.5"/>
+<polygon points="340,120 460,190 340,255 220,190" fill="#e8ebee" fill-opacity="0.16"/>
+<polygon points="460,190 460,320 340,390 340,255" fill="#a9b2bc" fill-opacity="0.2"/>
 <polygon points="220,190 220,320 340,390 340,255" fill="#ffffff" fill-opacity="0.05"/>
 </svg>

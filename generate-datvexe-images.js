@@ -163,7 +163,7 @@ const svg2 = `
     <text x="0" y="0" fill="#38bdf8">Microsoft (R) Test Execution Command Line Tool Version 17.8.0</text>
     <text x="0" y="26" fill="#64748b">Copyright (c) Microsoft Corporation.  All rights reserved.</text>
     <text x="0" y="60" fill="#e2e8f0">Starting test execution, please wait...</text>
-    <text x="0" y="86" fill="#a78bfa">A total of 1 test files matched the specified pattern.</text>
+    <text x="0" y="86" fill="#a9b2bc">A total of 1 test files matched the specified pattern.</text>
     
     <text x="0" y="130" fill="#10b981">Passed!  - DatVeXe.Tests.BookingService.VerifyRoutePricingMatrix [48ms]</text>
     <text x="0" y="156" fill="#10b981">Passed!  - DatVeXe.Tests.BookingService.ConcurrentTicketLocking_PreventsDoubleBooking [92ms]</text>

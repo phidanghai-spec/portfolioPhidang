@@ -1,19 +1,26 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const kanit = Kanit({
-  variable: "--font-kanit",
+const sans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin", "vietnamese"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://phidanghai-portfolio.vercel.app"),
-  title: "Đặng Hải Phi — Fullstack Developer Intern",
+  title: "Đặng Hải Phi — Fullstack & Backend Developer",
   description:
-    "Portfolio của Đặng Hải Phi — Sinh viên năm 4 HUFLIT. Chuyên môn ASP.NET Core, Next.js, 12 GoF Design Patterns, 50+ RESTful APIs, và Automation Testing với Selenium.",
+    "Portfolio của Đặng Hải Phi — Sinh viên năm 4 HUFLIT. Chuyên môn ASP.NET Core, Next.js, 15 Design Patterns, 50+ RESTful APIs, và Automation Testing với Selenium (Page Object Model).",
   keywords: [
     "Đặng Hải Phi",
     "Fullstack Developer",
@@ -22,8 +29,9 @@ export const metadata: Metadata = {
     "Next.js",
     "Portfolio",
     "HUFLIT",
-    "GoF Design Patterns",
+    "15 Design Patterns",
     "Selenium Testing",
+    "Page Object Model",
   ],
   authors: [{ name: "Đặng Hải Phi", url: "https://github.com/phidanghai-spec" }],
   openGraph: {
@@ -31,14 +39,14 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     url: "https://phidanghai-portfolio.vercel.app",
     siteName: "Đặng Hải Phi — Portfolio",
-    title: "Đặng Hải Phi — Fullstack Developer Intern",
-    description: "Sinh viên năm 4 HUFLIT. 50+ RESTful APIs, 12 GoF Design Patterns, Automation Testing.",
+    title: "Đặng Hải Phi — Fullstack & Backend Developer",
+    description: "Sinh viên năm 4 HUFLIT. 50+ RESTful APIs, 15 Design Patterns, 92 Unit Tests, Automation Testing.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Đặng Hải Phi Portfolio" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Đặng Hải Phi — Fullstack Developer Intern",
-    description: "Sinh viên năm 4 HUFLIT. 50+ RESTful APIs, 12 GoF Design Patterns.",
+    title: "Đặng Hải Phi — Fullstack & Backend Developer",
+    description: "Sinh viên năm 4 HUFLIT. 50+ RESTful APIs, 15 Design Patterns, 92 Unit Tests.",
     images: ["/og-image.png"],
   },
   icons: {
@@ -60,10 +68,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="vi" className="scroll-smooth">
-      <body className={`${kanit.variable} antialiased bg-[#090d16] text-[#f1f5f9]`}>
+      <body className={`${sans.variable} ${mono.variable} font-sans antialiased bg-[#07090e] text-[#cbd5e1] selection:bg-white/20 selection:text-white`}>
         <a
           href="#hero"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-teal-950 focus:text-teal-300 focus:border focus:border-teal-500 focus:rounded-xl focus:shadow-[0_0_20px_rgba(45,212,191,0.4)]"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#0c1017] focus:text-[#f1f5f9] focus:border focus:border-white/20 focus:rounded-xl focus:shadow-[0_0_20px_rgba(255,255,255,0.1)] font-mono text-xs"
         >
           Skip to main content
         </a>
