@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, GitFork, MapPin, Copy, Check, ExternalLink, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, GitFork, MapPin, Copy, Check, ArrowUpRight } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 const CONTACTS = [

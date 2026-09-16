@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, RoundedBox } from "@react-three/drei";
 import * as THREE from "three";
-import { RotateCw, Sparkles, Command } from "lucide-react";
+import { RotateCw, Sparkles } from "lucide-react";
 
 // ── 1. Clean SVG Icons for 16 Tech Stack Keys ──────────────────────────────────
 const SVG_ICONS: Record<string, string> = {
@@ -154,15 +154,16 @@ interface SingleKeyProps {
 
 /** Individual 3D Mechanical Keycap with fused Canvas Texture Decal */
 function KeyCapItem({ keyData, position, isHovered, onHover }: SingleKeyProps) {
-  const [texture, setTexture] = useState<THREE.CanvasTexture | null>(null);
+  const texture = useMemo(() => {
+    if (typeof window === "undefined") return null;
+    return generateKeycapTexture(keyData.name, SVG_ICONS[keyData.name]);
+  }, [keyData.name]);
 
   useEffect(() => {
-    const tex = generateKeycapTexture(keyData.name, SVG_ICONS[keyData.name]);
-    setTexture(tex);
     return () => {
-      tex.dispose();
+      texture?.dispose();
     };
-  }, [keyData.name]);
+  }, [texture]);
 
   const keyWidth = 1.04;
   const keyDepth = 0.94;

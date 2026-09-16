@@ -85,7 +85,7 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Lighthouse Performance", value: "100 / 100" },
       { label: "Payment Gateways", value: "4 Gateways" },
     ],
-    tags: ["Next.js", "ASP.NET Core", "Node.js", "Socket.io", "Prisma ORM", "TiDB Cloud"],
+    tags: ["Next.js", "Node.js", "Express.js", "Socket.io", "Prisma ORM", "TiDB Cloud"],
   },
   {
     id: "datvexe",
@@ -155,7 +155,7 @@ export default function ProjectsSection() {
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-xs font-mono font-semibold text-slate-300">
-                        {project.num} // {project.category}
+                        {project.num}{" // "}{project.category}
                       </span>
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
